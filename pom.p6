@@ -104,10 +104,11 @@ sub start_pause {
 sub start_next {
     my ($status, $elapsed) = get_status();
 
+    # Should be a better way of doing these?
     if ($status eq WORK) || ($status eq WAIT_PAUSE) {
         start_pause();
     }
-    elsif ($status eq PAUSE) || ($status eq WAIT_WORK) {
+    elsif ($status eq PAUSE) || ($status eq WAIT_WORK) || ($status eq STOPPED) {
         start_work();
     }
 }
