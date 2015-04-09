@@ -78,7 +78,7 @@ sub print_status($work_time, $pause_time, Bool $conky) {
 # Whatever.
 sub format_elapsed($dt) {
     my $sec = $dt;
-    my $min = 0;
+    my $min = 1; # XXX Display workaround ;)
     if $sec > 60 {
         $min = Int($sec / 60);
         $sec = $sec % 60;
